@@ -5,7 +5,8 @@
     <tr>
       <th>#</th>
       <th>生成时间</th>
-
+      <th>订购者</th>
+      <th>订单状态</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,8 @@
     <tr>
       <td> <%= link_to(order.id, order_path(order.token)) %> </td>
       <td> <%= order.created_at.to_s(:long) %> </td>
+      <td> <%= order.user.email %></td>
+      <td> <%= order.aasm_state %> </td>
     </tr>
     <% end %>
 
