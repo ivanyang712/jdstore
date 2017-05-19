@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     if params[:favorite] == "yes"
       @products = current_user.products
-    end 
+    end
   end
 
   def show
@@ -25,13 +25,6 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
-
-  def search
-    if @query_string.present?
-      @products = search_params
-    end
-  end
-
   def add_to_favorite
     @product = Product.find(params[:id])
     @product.users << current_user
@@ -43,6 +36,16 @@ class ProductsController < ApplicationController
     @product.users.delete(current_user)
     @product.save
     redirect_to :back, alert: "成功取消收藏!"
+  end
+
+  def search
+    if @query_string.present?
+      @products = search_params
+
+      # search_result = Product.ransack(@search_criteria).result(:distinct => true)
+      @products = search_params.paginate(:page => params[:page], :per_page => 5 )
+
+    end
   end
 
       protected
