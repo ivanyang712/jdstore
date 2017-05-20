@@ -43,6 +43,13 @@ gem 'seo_helper'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'acts_as_list'
+gem 'figaro'
+gem 'fog'
+gem 'jquery-turbolinks'
+gem "twemoji"
+gem 'bullet', group: 'development'
+gem 'rollbar'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

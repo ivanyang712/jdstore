@@ -4,10 +4,16 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_favorite, :quit_favorite]
 
   def index
-    @products = Product.all.order("position ASC")
-    if params[:favorite] == "yes"
-      @products = current_user.products
+    if params[:category].blank?
+      @products = Product.all.order("position ASC")
+      if params[:favorite] == "yes"
+        @products = current_user.products
+      end
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(:category_id => @category_id)
     end
+
   end
 
   def show
