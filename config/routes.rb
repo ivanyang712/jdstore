@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admin do
-     resources :products
+     resources :products 
      resources :orders do
        member do
          post :cancel
