@@ -1,25 +1,21 @@
-<nav class="navbar navbar-default" role="navigation">
+
+<nav class="navbar navbar-default bg-color2" role="navigation">
     <div class="container-fluid">
+          <div class="bg-color2">
+            <ul class="nav nav-pills" role="tablist">
+    					<li class="active"><a href="/">home</a></li>
+              <li><a href="/products">product</a></li>
+              <li><a href="#">Special</a></li>
+              <li><a href="#">Testimonials</a></li>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <ul class="nav navbar-nav">
-    					<li class=""><a href="/">home</a></li>
-              <li class=""><a href="/products">product</a></li>
-    				</ul>
-
-            <ul class="nav navbar-nav navbar-left">
-                  <%= form_tag search_products_path , :method => :get do %>
-                    <div class="input-group" id="search-id" >
-                      <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入产品信息">
-                      <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                          <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                      </div>
-                    </div>
-                  <% end %>
-            </ul>
+            <li class="nav navbar-nav navbar-left">
+                <%= form_tag search_products_path , :method => :get do %>
+                  <div class="search" >
+                    <input class="search-input" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入产品信息">
+                    <button class="search-button" type="submit"><i class="fa fa-search col-red"></i></button>
+                  </div>
+                <% end %>
+            </li>
 
             <ul class="nav navbar-nav navbar-right">
               <li>
@@ -55,9 +51,6 @@
 
               <% end %>
             </ul>
-
+    			</ul>
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
 </nav>
