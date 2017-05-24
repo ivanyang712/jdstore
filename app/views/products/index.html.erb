@@ -2,9 +2,11 @@
 <div class="header_placeholder h80"></div>
 <div class="header">
   <div class="w1200 clearfix bc mt30 pb20 header_content pr">
-    <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+    <div class="logo fl"><%=link_to("Chocolate", products_path, class: "col-red")%></div>
   </div>
-</div>
+
+<%= render :partial => "products/menu" %>
+
 <div class="minHeight1000 bg-gray">
   <div class="banner tc pt30 w1200 bc">
     <div id="myCarousel" class="carousel slide">
@@ -49,9 +51,9 @@
   </div>
 </div>
 
-<div class="category_sidebar tc border f12">
+<!-- <div class="category_sidebar tc border f12">
   <% Category.all.each do |category| %>
     <%= link_to category.name, products_path(category: category.name) %>
   <% end %>
   <a class="backtop" href="javascript:;"><i class="fa fa-arrow-circle-up"></i></a>
-</div>
+</div> -->
