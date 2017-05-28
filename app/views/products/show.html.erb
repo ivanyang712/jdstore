@@ -66,6 +66,15 @@
           <% else %>
             <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
           <% end %>
+
+        </div>
+          <!-- 收藏商品按钮 -->
+        <div class="col-sm-6 product-collection">
+          <% if !@product.users.include?(current_user) %>
+             <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart") %>
+           <% else %>
+             <%= link_to("已收藏（点击取消收藏）", quit_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:#7f8c8d;") %>
+           <% end %>
         </div>
 
       </div>
