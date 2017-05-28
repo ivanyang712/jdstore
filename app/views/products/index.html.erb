@@ -11,7 +11,7 @@
         <div class="thumbnail">
         <% link_to product_path(product) %>
           <% if product.photos.present? %>
-            <%= image_tag(product.photos[0].avatar.thumb.url) %>
+            <%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
           <% else %>
             <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
           <% end %>
