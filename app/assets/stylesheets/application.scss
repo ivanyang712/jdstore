@@ -17,6 +17,7 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 
  /*5种背景颜色*/
@@ -40,6 +41,7 @@
    background: #F5F5F5;
  }
 
+/*字体*/
  h1:after {
      background: #C6A668;
      content: '';
@@ -56,6 +58,42 @@
      font-size:46px;
      line-height: 1;
  }
+
+ .font1{
+   font-family: "Dancing Script", cursive;
+ }
+
+/*位置*/
+ .fl {
+     float: left;
+     display: inline;
+ }
+ .pr20 {
+     padding-right: 20px;
+ }
+
+ .pl20 {
+     padding-left: 20px;
+ }
+
+ .mg50 {
+     margin-top:200px;
+ }
+ .mr20 {
+     margin-right: 5px;
+ }
+ .mt20{
+   margin-top:20px;
+   margin-bottom: 0;
+ }
+ .ml{
+   margin-left: 300px;
+ }
+.bc {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 
  // 导航栏
 .navbar-default .nav-pills{
@@ -102,53 +140,10 @@
 
  }
 
- /*头部*/
- .header {
-   width: 1200px;
-   margin: 20px auto;
- }
-
- .headerContent {
-   height: 60px;
- }
-
- .headerContent-item {
-   height: 60px;
- }
-
- .headerContent-item1 {
-   float: left;
-   width: 180px;
-   margin-right: 180px;
- }
-
- .headerContent-item2 {
-   float: left;
-   width: 400px;
- }
-
  .headerContent-item3 {
    float: right;
    width: 150px;
  }
-
- /*菜单*/
- .menu {
-   width: 100%;
- }
-
- .menuList {
-   width: 1200px;
-   margin: 20px auto;
-   height: 42px;
- }
-
- .menuList-item {
-   float: left;
-   width: 108px;
-   height: 42px;
- }
-
 
  /*排序*/
  .orderList {
@@ -164,24 +159,6 @@
  }
 
 
- /*商品列表*/
- .productList {
-   margin: 20px auto;
-   width: 1200px;
-   overflow: hidden;
- }
-
- .productList-item {
-   float: left;
-   width: 228px;
-   height: 250px;
-   margin-right: 15px;
-   margin-bottom: 15px;
- }
-
- .productList-lastItem {
-   margin-right: 0;
- }
 
 /*搜索框*/
 .search {
@@ -263,78 +240,15 @@
  }
 
 
- /*商品信息*/
- .productDetail {
- 	width: 1200px;
- 	margin: 20px auto;
- 	height: 518px;
- }
-
- .productDetail img {
-   width: 100%;
-   height: 100%;
- }
-
- .productDetail-left-bigImage {
- 	width: 420px;
- 	height: 420px;
- }
-
- .productDetail-left-imageList {
- 	margin-top: 15px;
- }
-
- .productDetail-left-imageList-item {
- 	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
- 	width: 72px;
- 	height: 72px;
- 	margin-right: 15px;
- }
-
- .productDetail-left-imageList-lastItem {
- 	margin-right: 0;
- }
-
- /*商品详情*/
- .productDecription {
- 	width: 1200px;
-   text-align: center;
- 	margin: 20px auto;
- 	border: 1px solid #50514F;
-   line-height: 30px;
- }
-
- .productDecription-menuList {
- 	height: 35px;
- }
-
- .productDecription-menuList-item {
- 	float: left;
- 	width: 175px;
- 	height: 35px;
- }
-
- .productDecription-content {
- 	width: 750px;
-   height: 500px;
- 	margin: 50px auto;
- }
-
- .productDecription-content-item {
-   display: none;
-   width: 750px;
-   height: 500px;
- }
-
-
  /*footer*/
 .footer {
-  background: #fff;
+  background: #111;
   padding: 16px 10px 6px;
   text-align: center;
   font-size: 12px;
   color: #AAAAAA;
-  margin-top: 0;
+  margin-top: 0px;
+
   span {
     display: inline-block;
     margin-left: 5px;
@@ -343,6 +257,36 @@
     line-height: 23px;
   }
 }
+
+.soc-media-ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+
+}
+
+.soc-media-ul li {
+  margin-left: 2em;
+  text-decoration: none;
+
+}
+
+.soc-media-ul a {
+  display: block;
+  padding: 0.5em .65rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: 2px solid;
+  color: #aaa;
+
+  &:hover,&:focus {
+    text-decoration: none;
+    color: #C6A668;
+  }
+}
+
+
+
 
 /*字体颜色和背景颜色*/
 .lp-bg-gray {
@@ -380,7 +324,7 @@
 	&:hover {
 	  color: #fff;
     text-decoration:none;
-	  background-color: transparentize(#C6A668, 0.6);
+	  background-color: transparentize(#C6A668, 0.3);
 	  border-color: #C6A668;
 	}
 }
@@ -396,7 +340,7 @@
     padding-top: 0;
   }
 }
-.lp-action .text-content {
+.lp-action {
     top: 0;
     left: 0;
     width: 100%;
@@ -552,86 +496,60 @@
 }
 
 
-/*product index*/
-
-/*固定在顶部的头部*/
-.header_fixed {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background: #fff;
-  box-shadow: rgba(0,0,0,.1) 0 1px 5px;
+/*商品页*/
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 21px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 1px solid #ecf0f1;
+    border-radius: 4px;
+    -webkit-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
 }
 
-.header_fixed .header_content {
-  margin-top: 4px;
-  padding-bottom: 4px;
+.all-product-box{
+  width: 1200px;
+  align-content: center;
 }
 
-.header_placeholder {
-  display: none;
+.header {
+  text-align: center;
+
+  .background-image {
+    width: 100%;
+  }
+
 }
-/*适应中等尺寸的屏幕*/
-@media (max-width: 1200px) {
-  .w1200 {
-    width: 1000px;
-  }
-  .banner {
-    width: 1000px;
-  }
-  .carousel {
-    height: 313px;
-  }
-  .carousel-inner .item {
-    height: 333px;
-  }
-  .productList-item {
-    width: 192px;
-    height: 305px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    .productList-item-pic {
-      width: 162px;
-      height: 162px;
-    }
-    img {
-      width: 162px;
-      height: 162px;
+
+/*菜单*/
+.menu {
+  background: #FFF;
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+}
+.menuList-item {
+  background: #FFF;
+  padding: 0 22px;
+  cursor: pointer;
+  float: left;
+  list-style: none;
+  a {
+    color: #121212;
+    &:hover {
+      color: red;
     }
   }
-  .productList-lastItem {
-    margin-right: 0;
-  }
-  .logo {
-    width: 278px;
-  }
-  .cartProducts-title-msg {
-    width: 333px;
-  }
-  .cartProducts-title-price {
-    width: 115px;
-  }
-  .cartProducts-title-quantity {
-    width: 235px;
-  }
-  .cartProducts-title-total {
-    width: 165px;
-  }
-  .cartProducts-title-operation {
-    width: 150px;
-  }
-  .cartProducts-listItem .item-msg {
-    width: 215px;
-  }
-  .cartProducts-listItem .item-quantity {
-    width: 210px;
-  }
-  .cartProducts-listItem .item-total {
-    width: 176px;
-  }
-  .intro-text {
-    width: 550px;
+
+}
+
+.menuList-activeItem {
+  border-bottom: solid;
+  border-color: #aaa;
+  &:hover {
+    color: red;
   }
 }

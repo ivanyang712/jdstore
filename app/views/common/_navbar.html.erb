@@ -8,19 +8,19 @@
               <li><a href="#">Special</a></li>
               <li><a href="#">Testimonials</a></li>
 
-            <li class="nav navbar-nav navbar-left">
-                <%= form_tag search_products_path , :method => :get do %>
-                  <div class="search" >
-                    <input class="search-input" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入产品信息">
-                    <button class="search-button" type="submit"><i class="fa fa-search col-red"></i></button>
-                  </div>
-                <% end %>
-            </li>
+              <li class="nav navbar-nav navbar-left">
+                  <%= form_tag search_products_path , :method => :get do %>
+                    <div class="search" >
+                      <input class="search-input" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Product information">
+                      <button class="search-button" type="submit"><i class="fa fa-search col-red"></i></button>
+                    </div>
+                  <% end %>
+              </li>
 
             <ul class="nav navbar-nav navbar-right">
               <li>
                  <%= link_to carts_path do  %>
-                    购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                    Cart<i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                  <% end %>
               </li>
 
