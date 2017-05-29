@@ -118,6 +118,11 @@ html {
 .nav-pills > li > a {
     border-radius: 4px;
 }
+.navbar-brand img{
+  margin-top: 1px;
+  height: 20px;
+  weight:30px;
+}
 
 .nav > li > a {
     position: relative;
@@ -175,7 +180,7 @@ html {
 
 /*搜索框*/
 .search {
-  padding-top: 7px;
+  padding-top: 9px;
   padding-left: 50px;
   position: relative;
   display: block;
@@ -213,44 +218,6 @@ html {
   right: 0px;
   position: absolute;
 }
-
- /*左侧导航栏*/
- .category_sidebar {
-   position: fixed;
-   z-index: 998;
-   width: 80px;
-   background: #F6F9FA;
-   top: 50%;
-   left: 50%;
-   border-radius: 2px;
-   border: 1px solid #DDDDDD;
-   margin-left: -700px;
-   margin-top: -250px;
-   border-radius: 2px;
- }
-
- .category_sidebar a {
-   display: block;
-   width: 100%;
-   padding: 5px 0;
-   font-size: 12px;
-   line-height: 18px;
-   text-decoration: none;
-   text-align: center;
-   color: #6D6D6D;
-   background: #F6F9FA;
-   border-bottom: 1px solid #DDDDDD;
-   transition:all 0.2s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
-   -webkit-transition:all 0.2s; /*让「谷歌浏览器」支持这个属性*/
-   -moz-transition:all 0.2s; /*让「火狐浏览器」支持这个属性*/
-   -o-transition:all 0.2s; /*让「safari」支持属性*/
-   -ms-transition:all 0.2s; /*让「IE浏览器」支持这个属性*/
- }
-
- .category_sidebar a:hover {
-   color: #fff;
-   background: #D32048;
- }
 
 
  /*footer*/

@@ -1,17 +1,25 @@
 
 <nav class="navbar navbar-default bg-color2 navbar-fixed-top" role="navigation">
     <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src='<%= image_url 'logo-black.png' %>' ></a>
+      </div>
+
           <div class="bg-color2">
             <ul class="nav nav-pills" role="tablist">
-    					<li><a href="/">home</a></li>
-              <li><a href="/products">product</a></li>
-              <li><a href="#">Special</a></li>
-              <li><a href="#">Testimonials</a></li>
+              <li><a href="/products">Product</a></li>
 
               <li class="nav navbar-nav navbar-left">
                   <%= form_tag search_products_path , :method => :get do %>
                     <div class="search" >
-                      <input class="search-input" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Product information">
+                      <input class="search-input" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Product name">
                       <button class="search-button" type="submit"><i class="fa fa-search col-red"></i></button>
                     </div>
                   <% end %>
@@ -20,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li>
                  <%= link_to carts_path do  %>
-                    Cart<i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                    <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                  <% end %>
               </li>
 
