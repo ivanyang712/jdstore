@@ -25,15 +25,17 @@
 			    <div class="thumbnail">
 						<% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
 							<% if index < 7 %>
-							<% if product.photos.present? %>
-								<%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
+								<% if product.photos.present? %>
+									<%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
 							<% else %>
 								<%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
-							<% end %>
-							<% end %>
+									<% end %>
+								<% end %>
 							<% end %>
 				    </div>
 			  </div>
+			</div>
+		</div>
 	</section>
 
 
@@ -44,7 +46,6 @@
         <br>
         TRUST US WITH OUR PRODUCTS!
       </h1>
-
       <hr />
 
         <div class="col-sm-4">
@@ -67,7 +68,6 @@
               <p>"Choco's chocolates give me more health and sweet,
 								<br>When you tired,it provides more energy!"</p>
               <p class="text-right">&mdash; Scarlett Johansson</p>
-
             </div>
         </div>
 
@@ -80,7 +80,7 @@
 								<br> Not only me, but my family all love Choco!"</p>
               <p class="text-right">&mdash; David Beckham</p>
             </div>
-      </div>
+      	</div>
       </div>
     </div>
   </section>
