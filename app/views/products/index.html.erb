@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="header">
+      <%= image_tag("slide1.jpg", class: "background-image") %>
+      <%= render "products/menu" %>
+    </div>
+
+    <% @products.each do |product| %>
+      <div class="col-xs-6 col-md-3 tc">
+        <div class="thumbnail">
+        <% link_to product_path(product) %>
+          <% if product.photos.present? %>
+            <%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
+          <% end %>
+        <br>
+        </div>
+        <%= link_to(product.title, product_path(product)) %>
+        <br>
+        <strong>￥ <%= link_to(product.price, product_path(product)) %></strong></p>
+      </div>
+    <% end %>
+
+  </div>
+</div>

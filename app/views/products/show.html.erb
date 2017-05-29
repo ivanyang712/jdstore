@@ -1,0 +1,135 @@
+<!-- 本页面对应的CSS样式表：products.scss -->
+
+<div class="container product-show">
+  <div class="row">
+
+    <!-- 主图 -->
+    <div class="col-md-5 thumbnail mt20">
+      <% if @photos.present? %>
+        <% @photos.each_with_index do |p, index| %>
+          <% if index == 0 %>
+            <%= image_tag p.avatar.medium.url%>
+            <div style="letter-spacing: -8px">
+          <% else %>
+            <%= image_tag p.avatar.thumb.url %>
+          <% end %>
+        <% end %>
+        </div>
+      <% else %>
+          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail img-responsive") %>
+      <% end %>
+
+    </div>
+
+    <!-- 商品信息 -->
+    <div class="col-md-7">
+
+      <!-- 商品标题 -->
+      <h2 class="product-title"><%= @product.title %></h2>
+
+      <!-- 商品简述 -->
+      <div class="product-description">
+        <p>
+          <%= simple_format(@product.description) %>
+        </p>
+      </div>
+
+      <!-- 商品价格 -->
+      <div class="product-price-bgcolor">
+        <div class="product-price">
+          ￥ <%= @product.price %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- 商品库存 -->
+          <div class="product-quantity">
+            库存量： <%= @product.quantity %>
+          </div>
+       </div>
+
+        <div class="col-sm-6">
+          <!-- 商品类别 -->
+          <div class="product-quantity">
+            类别： <%= @product.category.name %>
+          </div>
+        </div>
+     </div>
+
+      <!-- 按钮区域 -->
+      <div class="add-to-cart-buttom row">
+        <!-- 加入购物车按钮 -->
+        <div class="col-sm-6">
+          <% if @product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
+          <% else %>
+            <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
+          <% end %>
+
+        </div>
+          <!-- 收藏商品按钮 -->
+        <div class="col-sm-6 product-collection">
+          <% if !@product.users.include?(current_user) %>
+             <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart") %>
+           <% else %>
+             <%= link_to("已收藏（点击取消收藏）", quit_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:#7f8c8d;") %>
+           <% end %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!--
+<div class="row">
+
+  <div class="col-md-4">
+
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.avatar.medium.url %>
+          <div style="letter-spacing: -8px">
+        <% else %>
+          <%= image_tag p.avatar.thumb.url %>
+        <% end %>
+      <% end %>
+      </div>
+    <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> 库存 : <%= @product.quantity %> </div>
+
+    <div class="intro-text-quantity clearfix">
+      <span class="pl20 pr30 fl">数量</span>
+      <div class="countNumber fl mt10">
+        <%= link_to("-", "#") %>
+        <input class="countNumber-input" type="text" value="<%= @product.buying_quantity %>">
+        <%= link_to("+", "#") %>
+      </div>
+    </div>
+
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+         已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div> -->
