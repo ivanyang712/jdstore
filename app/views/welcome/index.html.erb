@@ -21,19 +21,22 @@
 			<h1 class="tc">Our Products</h1>
       <hr/>
 			<div class="row">
-				<div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-						<% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
-							<% if index < 7 %>
+					<% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+					<% if index < 7 %>
+					<div class="col-sm-6 col-md-3">
+						<div class="thumbnail">
 								<% if product.photos.present? %>
 									<%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
-							<% else %>
+								<% else %>
 								<%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
-									<% end %>
 								<% end %>
-							<% end %>
+								<br>
+								<strong>￥ <%= link_to(product.price, product_path(product)) %></strong></p>
+								<%= link_to(product.title, product_path(product)) %>
 				    </div>
-			  </div>
+			    </div>
+					<% end %>
+				  <% end %>
 			</div>
 		</div>
 	</section>
