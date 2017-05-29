@@ -25,8 +25,8 @@
               </li>
 
               <% if !current_user %>
-                <li><%= link_to("注册", new_user_registration_path) %> </li>
-                <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <li><%= link_to("Signup", new_user_registration_path) %> </li>
+                <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
 
               <% else %>
                 <li class="dropdown">
@@ -37,15 +37,15 @@
                   <ul class="dropdown-menu">
                     <% if current_user.admin? %>
                         <li>
-                          <%= link_to("Admin 选单", admin_products_path ) %>
+                          <%= link_to("Admin Panel", admin_products_path ) %>
                         </li>
                     <%else%>
                         <li>
-                          <%= link_to("个人订单列表", account_orders_path ) %>
-                          <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
+                          <%= link_to("Order List", account_orders_path ) %>
+                          <li><%= link_to(content_tag(:i, "My Favorite", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
                         </li>
                     <% end %>
-                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                        <li> <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                   </ul>
                 </li>
 
