@@ -41,6 +41,13 @@
    background: #F5F5F5;
  }
 
+ .col-red {
+     color: #d32048;
+     a{
+       color: #d32048;
+     }
+ }
+
 // /*字体*/
 //  h1:after {
 //      background: #C6A668;
@@ -507,6 +514,17 @@ html {
     width: 100%;
   }
 
+}
+
+.productList-item img {
+    width: 100%;
+    height: 200px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.productList-item a {
+    color: #6D6D6D;
 }
 
 /*菜单*/
