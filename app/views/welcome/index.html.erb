@@ -13,7 +13,6 @@
 	  </div>
 	</div>
 
-
   <section id="categories">
 		<div class="container">
 			<h1 class="tc">Our Products</h1>
@@ -21,57 +20,17 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
 			    <div class="thumbnail">
-			      <img src="https://image.ibb.co/mhc0tF/product3.png">
-			      <div class="caption">
-              <h4><%= link_to("Chocolate") %></h4>
-			      </div>
+						<% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+							<% if index < 7 %>
+							<% if product.photos.present? %>
+								<%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
+							<% else %>
+								<%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
+							<% end %>
+							<% end %>
+						  <% end %>
 			    </div>
 			  </div>
-
-			  <div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-			      <img src="https://image.ibb.co/mhc0tF/product3.png">
-			      <div class="caption">
-			        <h4><%= link_to("Chocolate") %></h4>
-			      </div>
-			    </div>
-			  </div>
-
-			  <div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-			      <img src="https://image.ibb.co/mhc0tF/product3.png">
-			      <div class="caption">
-			        <h4><%= link_to("Chocolate") %></h4>
-			      </div>
-			    </div>
-			  </div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="https://image.ibb.co/mhc0tF/product3.png">
-						<div class="caption">
-							<h4><%= link_to("Chocolate") %></h4>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="https://image.ibb.co/mhc0tF/product3.png">
-						<div class="caption">
-							<h4><%= link_to("Chocolate") %></h4>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="https://image.ibb.co/mhc0tF/product3.png">
-						<div class="caption">
-							<h4><%= link_to("Chocolate") %></h4>
-						</div>
-					</div>
-				</div>
 	</section>
 
 
