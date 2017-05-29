@@ -118,6 +118,8 @@ html {
 .nav-pills > li > a {
     border-radius: 4px;
 }
+
+
 .navbar-brand img{
   margin-top: 1px;
   height: 20px;
@@ -309,7 +311,7 @@ html {
 	  color: #fff;
     text-decoration:none;
 	  background-color: transparentize(#C6A668, 0.3);
-	  border-color: #C6A668;
+	  border-color: white;
 	}
 }
 
@@ -347,7 +349,7 @@ html {
 }
 
 .jumbotron {
-  background-image: url(https://image.ibb.co/ckamYF/slide1.jpg);
+  background-image: url(https://ww1.sinaimg.cn/large/006tKfTcgy1ffykll0eycj30zk0kxn2a.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
@@ -384,14 +386,16 @@ html {
   font-size: 40px !important;
   text-align: center;
   line-height: 1.5;
+  font-family: 'Pacifico', cursive;
 }
 
 .jumbotron-slogan {
 	color: #fff;
   margin: 44px auto 0;
-  font-size: 16px;
+  font-size: 30px !important;
   line-height: 26px;
   text-align: center;
+  font-family: 'Pacifico', cursive;
 }
 .jumbotron-lead {
   margin-top: 40px;
