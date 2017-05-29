@@ -30,23 +30,33 @@ u.save
 # Initialize Product
 
 
- Product.create!(title: "QC-35",
-   description: "耳机",
-   price: 2800,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
-   )
-
- Product.create!(title: "Iphone7",
-   description: "手机",
-   price: 5000,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
-   )
-
-  Product.create!(title: "Cherry Keyboard",
-   description: "G80-3000键盘",
-   price: 2800,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
-   )
+# title = [
+#     "Sweet Dream",
+#     "Hope Love",
+#     "Cute Lollippo",
+#     "Box Love",
+#     "Belgium Choco",
+#     "DIY Choco",
+#   ]
+#
+#   images = [
+#     "https://ww1.sinaimg.cn/large/006tKfTcgy1ffyuyxe6doj31hc1407fk.jpg",
+#     "https://ww1.sinaimg.cn/large/006tKfTcgy1ffyuyxe6doj31hc1407fk.jpg",
+#     "https://ww3.sinaimg.cn/large/006tNc79gy1fg28dwtnkxj31hc0zkdst.jpg",
+#     "https://ww2.sinaimg.cn/large/006tNc79gy1fg28f3bvfij30zk0npag4.jpg",
+#     "https://ww4.sinaimg.cn/large/006tNc79gy1fg28gba013j31hc0rc476.jpg",
+#     "https://ww2.sinaimg.cn/large/006tNc79gy1fg28h317utj30b408cwep.jpg",
+#   ]
+#   for i in 0..6 do
+#        Product.create!(
+#        title: title[i],
+#        description:"Hope Sweety",
+#        quantity:rand(6..10),
+#        category_id: rand(1..6),
+#        price:rand(50..100)*10,
+#        )
+#      end
+#
+#    for i in 0..6 do
+#   Photo.create!(product_id: (i+1) ,avatar:open(images[i]))
+#  end
