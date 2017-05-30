@@ -31,8 +31,8 @@
               </li>
 
               <% if !current_user %>
-                <li><%= link_to("Signup", new_user_registration_path) %> </li>
-                <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <li><%= link_to(content_tag(:i, ' Signup', class: 'fa fa-user-plus'), new_user_registration_path) %> </li>
+                <li><%= link_to(content_tag(:i, ' Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
 
               <% else %>
                 <li class="dropdown">
