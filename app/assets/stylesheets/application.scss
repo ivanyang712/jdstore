@@ -153,6 +153,7 @@ html {
 }
 
 .carousel .item {
+  width: 1200px;
   height: 375px;
 }
 
@@ -352,7 +353,7 @@ html {
 .pa {
     position: relative;
     text-align: center;
-    background-image: url(https://ww4.sinaimg.cn/large/006tKfTcgy1ffyv2gdkiwj30dw09awew.jpg);
+    background-image: url(https://ww3.sinaimg.cn/large/006tKfTcgy1fg3ii4244lj30ry05tq56.jpg);
 }
 
 .jumbotron {
@@ -391,18 +392,20 @@ html {
   text-align: center;
   padding: 125px 20px 0;
   font-size: 40px !important;
+  font-weight: bolder;
   text-align: center;
   line-height: 1.5;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 
 .jumbotron-slogan {
 	color: #fff;
   margin: 44px auto 0;
   font-size: 30px !important;
-  line-height: 26px;
+  font-weight: bolder;
+  line-height: 30px;
   text-align: center;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 .jumbotron-lead {
   margin-top: 40px;
@@ -438,8 +441,14 @@ html {
 }
 .tc {
     text-align: center;
+
 }
 
+.tc1 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+
+}
 /*Testimonials*/
 .sec-testimonials {
   background: #f9f9f9;
@@ -448,7 +457,7 @@ html {
 
 .sec-testimonials h1 span {
     color: #e42129;
-    font-family: inherit;
+    font-family: 'Pacifico', cursive;
     font-weight: 500;
     line-height: 1.1;
 }
