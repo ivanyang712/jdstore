@@ -21,7 +21,6 @@
 			<h1 class="tc">Our Products</h1>
       <hr/>
 			<div class="row">
-<<<<<<< HEAD
 					<% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
 					<% if index < 8 %>
 					<div class="col-sm-6 col-md-3">
@@ -32,7 +31,7 @@
 								<%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
 								<% end %>
 								<br>
-								<strong class="col-red">￥ <%= link_to(product.price, product_path(product)) %></strong></p>
+								<strong class="col-red">￥ <%= product.price %></strong></p>
 								<%= link_to(product.title, product_path(product)) %>
 				    </div>
 			    </div>
@@ -40,21 +39,6 @@
 				  <% end %>
 			</div>
 		</div>
-=======
-				<% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
-					<% if index < 10 %>
-				<div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-							<% if product.photos.present? %>
-								<%= link_to image_tag(product.photos[0].avatar.thumb.url),product_path(product) %>
-							<% else %>
-								<%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-ts"), product_path(product) %>
-							<% end %>
-			    </div>
-					<% end %>
-					<% end %>
-			  </div>
->>>>>>> develop
 	</section>
 
 
