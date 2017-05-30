@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  namespace :admin do
+    resources :categories
+  end
+
   resources :products do
     member do
       post :add_to_cart
