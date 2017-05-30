@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :admin_required
 
   def index
-    @categories = Category.includes(:category)
+    @categories = Category.all
   end
 
   def new
@@ -33,6 +33,15 @@ class Admin::CategoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+
+    @category.destroy
+    flash[:notice] = "category deleted"
+    redirect_to admin_categories_path
+
   end
 
   private
