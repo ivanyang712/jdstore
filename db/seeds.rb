@@ -30,33 +30,12 @@ u.save
 # Initialize Product
 
 
-# title = [
-#     "Sweet Dream",
-#     "Hope Love",
-#     "Cute Lollippo",
-#     "Box Love",
-#     "Belgium Choco",
-#     "DIY Choco",
-#   ]
+
+# Product.create!(title: "Dark Chocolate",
+#    description: "Dark Chocolate 120g",
+#    category_id: "1",
+#    price: 128,
+#    quantity: 50,
+#    )
 #
-#   images = [
-#     "https://ww1.sinaimg.cn/large/006tKfTcgy1ffyuyxe6doj31hc1407fk.jpg",
-#     "https://ww1.sinaimg.cn/large/006tKfTcgy1ffyuyxe6doj31hc1407fk.jpg",
-#     "https://ww3.sinaimg.cn/large/006tNc79gy1fg28dwtnkxj31hc0zkdst.jpg",
-#     "https://ww2.sinaimg.cn/large/006tNc79gy1fg28f3bvfij30zk0npag4.jpg",
-#     "https://ww4.sinaimg.cn/large/006tNc79gy1fg28gba013j31hc0rc476.jpg",
-#     "https://ww2.sinaimg.cn/large/006tNc79gy1fg28h317utj30b408cwep.jpg",
-#   ]
-#   for i in 0..6 do
-#        Product.create!(
-#        title: title[i],
-#        description:"Hope Sweety",
-#        quantity:rand(6..10),
-#        category_id: rand(1..6),
-#        price:rand(50..100)*10,
-#        )
-#      end
-#
-#    for i in 0..6 do
-#   Photo.create!(product_id: (i+1) ,avatar:open(images[i]))
-#  end
+# Photo.create!(product_id:1, avatar: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg"))
